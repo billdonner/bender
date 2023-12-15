@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		88C5A79D2B2BD31900D0FEA5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5A79C2B2BD31900D0FEA5 /* main.swift */; };
+		88C5A7A52B2BD34000D0FEA5 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 88C5A7A42B2BD34000D0FEA5 /* ArgumentParser */; };
+		88C5A7AB2B2D041800D0FEA5 /* q20kshare in Frameworks */ = {isa = PBXBuildFile; productRef = 88C5A7AA2B2D041800D0FEA5 /* q20kshare */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		88C5A7992B2BD31900D0FEA5 /* bender */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bender; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C5A79C2B2BD31900D0FEA5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		88C5A7A62B2BDB2B00D0FEA5 /* json1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json1.json; sourceTree = "<group>"; };
+		88C5A7A72B2BDBC200D0FEA5 /* json2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json2.json; sourceTree = "<group>"; };
+		88C5A7A82B2BDBF100D0FEA5 /* json3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json3.json; sourceTree = "<group>"; };
+		88C5A7AC2B2D14C300D0FEA5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C5A7AB2B2D041800D0FEA5 /* q20kshare in Frameworks */,
+				88C5A7A52B2BD34000D0FEA5 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +49,10 @@
 		88C5A7902B2BD31900D0FEA5 = {
 			isa = PBXGroup;
 			children = (
+				88C5A7AC2B2D14C300D0FEA5 /* README.md */,
+				88C5A7A62B2BDB2B00D0FEA5 /* json1.json */,
+				88C5A7A72B2BDBC200D0FEA5 /* json2.json */,
+				88C5A7A82B2BDBF100D0FEA5 /* json3.json */,
 				88C5A79B2B2BD31900D0FEA5 /* bender */,
 				88C5A79A2B2BD31900D0FEA5 /* Products */,
 			);
@@ -78,6 +90,10 @@
 			dependencies = (
 			);
 			name = bender;
+			packageProductDependencies = (
+				88C5A7A42B2BD34000D0FEA5 /* ArgumentParser */,
+				88C5A7AA2B2D041800D0FEA5 /* q20kshare */,
+			);
 			productName = bender;
 			productReference = 88C5A7992B2BD31900D0FEA5 /* bender */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +122,10 @@
 				Base,
 			);
 			mainGroup = 88C5A7902B2BD31900D0FEA5;
+			packageReferences = (
+				88C5A7A32B2BD34000D0FEA5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				88C5A7A92B2D041800D0FEA5 /* XCRemoteSwiftPackageReference "q20kshare" */,
+			);
 			productRefGroup = 88C5A79A2B2BD31900D0FEA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +309,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88C5A7A32B2BD34000D0FEA5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+		88C5A7A92B2D041800D0FEA5 /* XCRemoteSwiftPackageReference "q20kshare" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/billdonner/q20kshare";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88C5A7A42B2BD34000D0FEA5 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88C5A7A32B2BD34000D0FEA5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		88C5A7AA2B2D041800D0FEA5 /* q20kshare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88C5A7A92B2D041800D0FEA5 /* XCRemoteSwiftPackageReference "q20kshare" */;
+			productName = q20kshare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88C5A7912B2BD31900D0FEA5 /* Project object */;
 }
