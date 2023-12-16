@@ -16,7 +16,7 @@ struct Bender: ParsableCommand {
   
   static let configuration = CommandConfiguration(
     abstract: "Bender Builds The Files Needed By QANDA Mobile App",
-    version: "0.1.1",
+    version: "0.1.2",
     subcommands: [],
     defaultSubcommand: nil,
     helpNames: [.long, .short]
@@ -132,7 +132,7 @@ struct Bender: ParsableCommand {
     
     // write the deduped data
     let encoder = JSONEncoder()
-    encoder.dateEncodingStrategy = .iso8601
+   // encoder.dateEncodingStrategy = .iso8601
     encoder.outputFormatting = .prettyPrinted
     do {
     let outputData = try encoder.encode(playdata)

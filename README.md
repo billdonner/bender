@@ -1,5 +1,5 @@
 #  Bender - make ReadyForIOS1
-version 0.1.1
+version 0.1.2
 
 ## Takes Multiple Outputs from T7 and Bends Them Into IOS APP Format 
 
@@ -7,6 +7,8 @@ version 0.1.1
 
 
 ```
+OVERVIEW: Bender Builds The Files Needed By QANDA Mobile App
+
 USAGE: bender <json-files> ... [--output-file <output-file>]
 
 ARGUMENTS:
@@ -16,5 +18,6 @@ OPTIONS:
   -o, --output-file <output-file>
                           The name of the output file. (default:
                           merged_output.json)
+  --version               Show the version.
   -h, --help              Show help information.
 ```
