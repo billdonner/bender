@@ -27,9 +27,6 @@
 /* Begin PBXFileReference section */
 		88C5A7992B2BD31900D0FEA5 /* bender */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bender; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C5A79C2B2BD31900D0FEA5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		88C5A7A62B2BDB2B00D0FEA5 /* json1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json1.json; sourceTree = "<group>"; };
-		88C5A7A72B2BDBC200D0FEA5 /* json2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json2.json; sourceTree = "<group>"; };
-		88C5A7A82B2BDBF100D0FEA5 /* json3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json3.json; sourceTree = "<group>"; };
 		88C5A7AC2B2D14C300D0FEA5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,9 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				88C5A7AC2B2D14C300D0FEA5 /* README.md */,
-				88C5A7A62B2BDB2B00D0FEA5 /* json1.json */,
-				88C5A7A72B2BDBC200D0FEA5 /* json2.json */,
-				88C5A7A82B2BDBF100D0FEA5 /* json3.json */,
 				88C5A79B2B2BD31900D0FEA5 /* bender */,
 				88C5A79A2B2BD31900D0FEA5 /* Products */,
 			);

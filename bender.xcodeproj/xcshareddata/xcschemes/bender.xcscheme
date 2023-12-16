@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/users/fs/json1.json /users/fs/json2.json /users/fs/json3.json "
+            argument = "/users/fs/repaired1.json /users/fs/repaired2.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

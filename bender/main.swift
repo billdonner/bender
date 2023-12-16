@@ -14,6 +14,14 @@ import q20kshare
 
 struct Bender: ParsableCommand {
   
+  static let configuration = CommandConfiguration(
+    abstract: "Bender Builds The Files Needed By QANDA Mobile App",
+    version: "0.1.1",
+    subcommands: [],
+    defaultSubcommand: nil,
+    helpNames: [.long, .short]
+  )
+  
   @Argument(help: "The data files to be merged.")
   var jsonFiles: [String]
   
@@ -26,6 +34,7 @@ struct Bender: ParsableCommand {
     
     for file in jsonFiles {
       if let data = try? Data(contentsOf: URL(fileURLWithPath: file)) {
+        print(">Processing \(file)\n")
         let decoder = JSONDecoder()
         //decoder.dateDecodingStrategy = .iso8601
         do{
@@ -36,6 +45,7 @@ struct Bender: ParsableCommand {
         }
         catch {
           print("decoding error \(error)")
+          return
         }
       }
     }
