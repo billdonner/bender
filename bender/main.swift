@@ -10,13 +10,18 @@ import Foundation
 import ArgumentParser
 import q20kshare
 
-
+func fetchTopicData(_ tdurl:String ) throws -> TopicData {
+  // Load substitutions JSON file,throw out all of the metadata for now
+  let xdata = try Data(contentsOf: URL(fileURLWithPath: tdurl))
+  let decoded = try JSONDecoder().decode(TopicData.self, from:xdata)
+  return decoded
+}
 
 struct Bender: ParsableCommand {
   
   static let configuration = CommandConfiguration(
     abstract: "Bender Builds The Files Needed By QANDA Mobile App",
-    version: "0.1.2",
+    version: "0.1.3",
     subcommands: [],
     defaultSubcommand: nil,
     helpNames: [.long, .short]
@@ -28,9 +33,14 @@ struct Bender: ParsableCommand {
   @Option(name: .shortAndLong, help: "The name of the output file.")
   var outputFile: String = "merged_output.json"
   
+  @Option(name: .shortAndLong, help: "The name of the topics data file .")
+  var tdPath: String = "TopicData.json"
+  
   func run() throws {
     var mergedData: [Challenge] = []
     var dedupedData: [Challenge] = []
+    let topicData = try fetchTopicData(tdPath)
+    let tdblocks = topicData.topics
     
     for file in jsonFiles {
       if let data = try? Data(contentsOf: URL(fileURLWithPath: file)) {
@@ -105,11 +115,17 @@ struct Bender: ParsableCommand {
     print("+==================+")
     
     let topics =  entries.map {
-      Topic(name: $0.topic, subject: $0.topic, per: 1, desired: 1, pic: "pencil", notes: "Notes for \($0.topic)")}
+      var pic = "pencil"
+      var notes = ""
+      for td in tdblocks {
+        if $0.topic == td.name { pic = td.pic ; notes = td.notes; break}
+      }
+      return Topic(name: $0.topic, subject: $0.topic, per: 1, desired: 1, pic:pic,   notes: "Notes for \(notes)")
+    }
    
-    let td = TopicData(snarky:"foofoo",version:"0.0",
-                       author:"wld", date: "\(Date())",
-                       purpose:"none",topics:topics)
+    let rewrittenTd = TopicData(snarky:topicData.snarky,version:topicData.version,
+                       author:topicData.author, date: "\(Date())",
+                       purpose:topicData.purpose,topics:topics)
     
     var gamedatum: [GameData] = []
     for t in topics {
@@ -125,7 +141,7 @@ struct Bender: ParsableCommand {
     }
     
     
-    let playdata = PlayData(topicData:td,
+    let playdata = PlayData(topicData:rewrittenTd,
                             gameDatum: gamedatum,
                             playDataId: UUID().uuidString,
                             blendDate: Date() )
