@@ -1,5 +1,5 @@
 #  Bender - make ReadyForIOS1
-version 0.1.3
+version 0.1.4
 
 ## Takes Multiple Outputs from T7 and Bends Them Into IOS APP Format 
 

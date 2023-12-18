@@ -21,7 +21,7 @@ struct Bender: ParsableCommand {
   
   static let configuration = CommandConfiguration(
     abstract: "Bender Builds The Files Needed By QANDA Mobile App",
-    version: "0.1.3",
+    version: "0.1.4",
     subcommands: [],
     defaultSubcommand: nil,
     helpNames: [.long, .short]
@@ -120,10 +120,10 @@ struct Bender: ParsableCommand {
       for td in tdblocks {
         if $0.topic == td.name { pic = td.pic ; notes = td.notes; break}
       }
-      return Topic(name: $0.topic, subject: $0.topic, per: 1, desired: 1, pic:pic,   notes: "Notes for \(notes)")
+      return Topic(name: $0.topic, subject: $0.topic, pic:pic,   notes: "Notes for \(notes)")
     }
    
-    let rewrittenTd = TopicData(snarky:topicData.snarky,version:topicData.version,
+    let rewrittenTd = TopicData(description:topicData.description,version:topicData.version,
                        author:topicData.author, date: "\(Date())",
                        purpose:topicData.purpose,topics:topics)
     

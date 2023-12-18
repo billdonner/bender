@@ -56,16 +56,16 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-t /users/fs/topics-2x20x25.json"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-h"
+            argument = "-t /users/fs/topics-info.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-o /users/fs/output.json"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-h"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
